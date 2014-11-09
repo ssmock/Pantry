@@ -42,7 +42,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DatabaseSetup\back.1.everything.sql" />
     <Content Include="DatabaseSetup\forward.1.database.sql" />
+    <Content Include="DatabaseSetup\forward.2.schemas.sql" />
     <Content Include="DatabaseSetup\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
