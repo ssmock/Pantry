@@ -27,5 +27,6 @@ namespace Pantry.Common
         }
 
         public bool IncludeCustomary { get; set; }
+        public bool IncludeMetric { get; set; }
     }
 }

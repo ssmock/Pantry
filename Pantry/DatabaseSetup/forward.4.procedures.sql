@@ -12,6 +12,10 @@ GO
 
 */
 create procedure Common.GetUnits
+(
+    @IncludeCustomary bit = 1,
+    @IncludeMetric bit = 0
+)
 as
 begin
     set nocount on
@@ -22,9 +26,17 @@ begin
         MetricConversion,
         IsMetric
     from
-        Common.Unit		
+        Common.Unit
+    where
+        -- Only get metric rows when they're
+        -- requested.
+        (IsMetric = 1
+            and @IncludeMetric = 1)
+        -- Same for customary.
+        or (IsMetric = 0
+            and @IncludeCustomary = 1)	
 end
 GO
 
-print 'Procedure "Common.GetUnits" was created.'
+print 'Procedure "Common.GetUnitNames" was created.'
 GO
