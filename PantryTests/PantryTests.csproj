@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Db\setup.sql" />
     <Content Include="Db\Test.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
