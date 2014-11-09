@@ -50,3 +50,27 @@ else
 begin
     print 'Database "Pantry" does not exist to drop.'
 end
+
+if not exists (select 1 from sys.tables where object_id = object_id('Common.Unit'))
+begin	
+    print 'Table "Common.Unit" does not exist to drop.'
+end
+else
+begin
+    drop table Common.Unit
+
+    print 'Table "Common.Unit" was dropped.'
+end
+GO
+
+if exists (select 1 from sys.procedures where object_id = object_id('Common.GetUnits'))
+begin
+    drop procedure Common.GetUnits
+
+    print 'Procedure "Common.GetUnits" was dropped.'
+end
+else
+begin
+    print 'Procedure "Common.GetUnits" does not exist to drop.'
+end
+
