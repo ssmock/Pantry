@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.38\lib\net45\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,13 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\GetUnits.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseSetup\back.1.everything.sql" />
     <Content Include="DatabaseSetup\forward.1.database.sql" />
     <Content Include="DatabaseSetup\forward.2.schemas.sql" />
+    <Content Include="DatabaseSetup\forward.4.procedures.sql" />
+    <Content Include="DatabaseSetup\forward.3.tables.sql" />
+    <Content Include="DatabaseSetup\forward.5.unit_setup.sql" />
     <Content Include="DatabaseSetup\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
