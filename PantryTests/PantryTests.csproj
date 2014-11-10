@@ -57,6 +57,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PantryTestBase.cs" />
     <Compile Include="Stock\TestCreateBatch.cs" />
+    <Compile Include="Stock\TestCancelBatch.cs" />
+    <Compile Include="Stock\TestCommitBatch.cs" />
+    <Compile Include="SingleBatchTestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

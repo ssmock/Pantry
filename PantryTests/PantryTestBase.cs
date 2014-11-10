@@ -13,9 +13,10 @@ namespace PantryTests
         protected IDbTransaction transaction;
 
         protected const int systemUserId = 1;
+        protected static DateTime defaultDate = new DateTime(1900, 1, 1);
 
         [TestInitialize]
-        public void Initialize()
+        public virtual void Initialize()
         {
             connection = new SqlConnection(
                 ConfigurationManager.ConnectionStrings["PantryTest"]
@@ -27,7 +28,7 @@ namespace PantryTests
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public virtual void Cleanup()
         {
             transaction.Rollback();
             connection.Close();
