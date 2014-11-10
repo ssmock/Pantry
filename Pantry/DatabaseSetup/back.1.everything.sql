@@ -74,3 +74,25 @@ begin
     print 'Procedure "Common.GetUnits" does not exist to drop.'
 end
 
+if not exists (select 1 from sys.tables where object_id = object_id('Stock.ChangeBatch'))
+begin	
+    print 'Table "Stock.ChangeBatch" does not exist to drop.'
+end
+else
+begin
+    drop table Stock.ChangeBatch
+
+    print 'Table "Stock.ChangeBatch" was dropped.'
+end
+GO
+
+if exists (select 1 from sys.procedures where object_id = object_id('Stock.CreateChangeBatch'))
+begin
+    drop procedure Stock.CreateChangeBatch
+
+    print 'Procedure "Stock.CreateChangeBatch" was dropped.'
+end
+else
+begin
+    print 'Procedure "Stock.CreateChangeBatch" does not exist to drop.'
+end

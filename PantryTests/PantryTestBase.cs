@@ -12,6 +12,8 @@ namespace PantryTests
         protected IDbConnection connection;
         protected IDbTransaction transaction;
 
+        protected const int systemUserId = 1;
+
         [TestInitialize]
         public void Initialize()
         {
