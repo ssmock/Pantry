@@ -10,8 +10,6 @@ namespace Pantry.Common
         {
             public string Name { get; set; }
             public decimal StandardConversion { get; set; }
-            public decimal MetricConversion { get; set; }
-            public bool IsMetric { get; set; }
         }
 
         public IEnumerable<Result> Query(
@@ -25,8 +23,5 @@ namespace Pantry.Common
                     param: this,
                     transaction: transaction);
         }
-
-        public bool IncludeCustomary { get; set; }
-        public bool IncludeMetric { get; set; }
     }
 }

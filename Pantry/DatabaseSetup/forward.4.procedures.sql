@@ -6,35 +6,21 @@ GO
 
 /*
 
-    Gets a full unit lookup, filtered and ordered as specified.
+    Gets a full unit lookup.
 
-    Selects Name, StandardConversion, MetricConversion, IsMetric
+    Selects Name, StandardConversion
 
 */
 create procedure Common.GetUnits
-(
-    @IncludeCustomary bit = 1,
-    @IncludeMetric bit = 0
-)
 as
 begin
     set nocount on
 
     select
         Name,
-        StandardConversion,
-        MetricConversion,
-        IsMetric
+        StandardConversion
     from
         Common.Unit
-    where
-        -- Only get metric rows when they're
-        -- requested.
-        (IsMetric = 1
-            and @IncludeMetric = 1)
-        -- Same for customary.
-        or (IsMetric = 0
-            and @IncludeCustomary = 1)	
 end
 GO
 
